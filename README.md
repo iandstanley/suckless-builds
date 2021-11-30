@@ -18,8 +18,11 @@ The ports have their own makefile that allows you to override the configuration 
 
 These scripts can be easily modified to change the output format in order that the output can be edited without changing the *blocks.def.h* file and recompiling. 
 
-## st 
+## st (original st build)
 
 1. Edit *config.h* to add your liking 
 2. Run *./build* to build dwm from ports with your changes.
 
+## lukes-st-build
+
+This is Luke Smith's build of st includes copy/paste and capture urls etc. This can be built using *sudo make install clean"
