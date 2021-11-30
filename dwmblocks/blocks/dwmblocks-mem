@@ -1,6 +1,3 @@
-#!/bin/sh
+#!/bin/sh 
 
-test -f "/usr/local/bin/freecolor" || sudo pkg install -y freecolor  
-
-freecolor -m | sed -e '1q' | sed -e 's/^.*]//' | cut -f 2 -w
-
+top -b | grep Mem | awk -F ',' '{print $(NF)}' | cut -f 2 -w
