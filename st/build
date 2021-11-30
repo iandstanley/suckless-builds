@@ -1,12 +1,12 @@
 #!/bin/sh -x
 
-# Building dwm from ports
+# Building st terminal from ports
 #
 # Change config.h to suit then run this file
 
-CONFIG="DWM_CONF=$PWD/config.h"
+CONFIG="ST_CONF=$PWD/config.h"
 
-cd /usr/ports/x11-wm/dwm
+cd /usr/ports/x11/sterm
 
 sudo make $CONFIG reinstall clean
 

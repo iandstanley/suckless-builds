@@ -20,3 +20,6 @@ These scripts can be easily modified to change the output format in order that t
 
 ## st 
 
+1. Edit *config.h* to add your liking 
+2. Run *./build* to build dwm from ports with your changes.
+
