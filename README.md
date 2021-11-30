@@ -7,6 +7,9 @@ The ports have their own makefile that allows you to override the configuration 
 
 ## dwm
 
+1. Edit *config.h* to add your liking 
+2. Run *./build* to build dwm from ports with your changes.
+
 ## dwmblocks
 
 1. Edit *blocks.def.h* to add your liking 

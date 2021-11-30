@@ -1,0 +1,13 @@
+#!/bin/sh -x
+
+# Building dwm from ports
+#
+# Change blocks.def.h to suit then run this file
+
+CONFIG="DWM_CONF=$PWD/config.h"
+
+cd /usr/ports/x11-wm/dwm
+
+sudo make $CONFIG reinstall clean
+
+cd - 
