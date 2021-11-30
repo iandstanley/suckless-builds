@@ -1,0 +1,13 @@
+#!/bin/sh -x
+
+# Building dwmblocks from ports
+#
+# Change blocks.def.h to suit then run this file
+
+CONFIG=$PWD/blocks.def.h
+
+cd /usr/ports/x11/dwmblocks
+
+sudo make BLK_CONF=$CONFIG reinstall clean
+
+cd - 
