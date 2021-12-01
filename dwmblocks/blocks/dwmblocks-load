@@ -1,2 +1,4 @@
 #!/bin/sh
-echo l:`uptime | sed -e 's/^.*averages: // ; s/,.*$//'`
+
+echo l:$(uptime | sed -e 's/^.*averages: // ; s/,.*$//')
+

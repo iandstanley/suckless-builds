@@ -1,11 +1,11 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/	/*Update Interval*/	/*Update Signal*/
-	{"", "dwmblocks-wlan-ip",	120,			0},
-	{"", "dwmblocks-ue-ip",		120,			0},
+	{"", "dwmblocks-wlan-ip",	60,			0},
+	{"", "dwmblocks-ue-ip",		60,			0},
 	{"", "dwmblocks-who",		0,			0},
-	{"", "dwmblocks-cpu",	 	60,			0},
-	{"", "dwmblocks-load", 	 	60,			0},
+	{"", "dwmblocks-cpu",	 	30,			0},
+	{"", "dwmblocks-load", 	 	30,			0},
 	{"", "dwmblocks-battery",	60,			0},
 	{"", "dwmblocks-mem",		60,			0},
 	{"", "dwmblocks-date",		60,			0},
