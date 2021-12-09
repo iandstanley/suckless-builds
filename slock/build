@@ -1,0 +1,9 @@
+#!/bin/sh -x
+
+# BUILDING SLOCK SCREEN LOCKING FROM PORTS
+
+cd /usr/ports/x11/slock
+
+sudo make reinstall clean
+
+cd - 
