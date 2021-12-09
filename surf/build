@@ -1,0 +1,56 @@
+#!/bin/sh -x
+
+# BUILDING DWM FROM PORTS
+
+# REVISION HISTORY 
+# 1. Added support for suckless patches 
+#
+# In order to do this you should sudo make extract in the ports dir
+# for surf; cp files to files.orig; amend the files then run sudo
+# make makepatch which creates the patches in files/; these should
+# be copied to the same directory as ./build so it can recreate the
+# environment to build surf.
+
+# SURF PATCHES ADDED:
+# 1. quit - uss ^q to quit 
+
+
+SURFPORTDIR=/usr/ports/www/surf
+MYPATCHES=${SURFPORTDIR}/files
+
+MYDIR=$PWD
+
+echo $SURFPORTDIR
+echo $MYPATCHES
+
+# copy required patches 
+sudo mkdir ${MYPATCHES}
+sudo cp ${MYDIR}/patch-config.h ${MYPATCHES}/
+sudo cp ${MYDIR}/patch-surf.c   ${MYPATCHES}/
+
+cd ${SURFPORTDIR}
+
+# remove previous installation, clean-up and pull a copy of the
+# sources
+sudo make clean extract
+
+# now we need to run make on Suckless sources to create config.h
+# from config.def.h
+sudo make -C work/surf* config.h
+
+# and patch 
+sudo make patch 
+
+# Change config.h to suit then run this file (assuming you are
+# running sudo make $CONFIG reinstall
+# 	sudo make $CONFIG reinstall 
+# then reinstall package 
+sudo make reinstall 
+
+# clean up files and work directories
+sudo rm -rf /usr/ports/www/surf/files
+sudo rm -rf /usr/ports/www/surf/work
+
+# go back o where I started
+cd ${MYDIR} 
+
